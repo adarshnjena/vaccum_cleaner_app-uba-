@@ -79,12 +79,16 @@ class PanelWidget extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-        const SizedBox(
-          height: 10,
-        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Divider(
+              color: Colors.black,
+              thickness: 3,
+              height: 15,
+              endIndent: 170,
+              indent: 170,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(

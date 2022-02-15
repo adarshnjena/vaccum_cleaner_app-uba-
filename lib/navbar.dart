@@ -31,7 +31,7 @@ class NavBar extends StatelessWidget {
             title: Text('Profile', style: GoogleFonts.nunito()),
             onTap: () => {},
           ),
-          const Divider(),
+          const Divider(color: Colors.black12),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: Text('Notifications', style: GoogleFonts.nunito()),
@@ -63,7 +63,7 @@ class NavBar extends StatelessWidget {
             title: Text('settings', style: GoogleFonts.nunito()),
             onTap: () => {},
           ),
-          const Divider(),
+          const Divider(color: Colors.black12),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: Text('Exit', style: GoogleFonts.nunito()),
