@@ -15,21 +15,14 @@ class NavBar extends StatelessWidget {
             accountName: Text('Adarsh Jena', style: GoogleFonts.nunito()),
             accountEmail:
                 Text('adarsshnjena@gmail.com', style: GoogleFonts.nunito()),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.network(
-                  'https://firebasestorage.googleapis.com/v0/b/caportal-adhyaaya.appspot.com/o/IMG_20211118_093820.jpg?alt=media&token=5ba2ba0c-d5ca-4da1-a840-f803996c57d7',
-                  width: 90,
-                  height: 90,
-                  fit: BoxFit.cover,
-                ),
-              ),
+            currentAccountPicture: const CircleAvatar(
+              radius: 100,
+              backgroundImage: AssetImage('images/profile.jpg'),
             ),
             decoration: const BoxDecoration(
                 color: Color(0xFF01d9b2),
                 image: DecorationImage(
-                  image: NetworkImage(
-                      'https://firebasestorage.googleapis.com/v0/b/caportal-adhyaaya.appspot.com/o/pexels-sam-kolder-2387873.jpg?alt=media&token=fa203180-3576-405a-b18e-8b544af1e9e4'),
+                  image: AssetImage("images/background.jpg"),
                   fit: BoxFit.cover,
                 )),
           ),

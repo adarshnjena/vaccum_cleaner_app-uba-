@@ -16,8 +16,7 @@ class MainPage extends StatelessWidget {
         const Center(
           child: CircleAvatar(
             radius: 150,
-            backgroundImage: NetworkImage(
-                'https://firebasestorage.googleapis.com/v0/b/caportal-adhyaaya.appspot.com/o/Untitled%20design.png?alt=media&token=b902d61a-c8d8-4a90-8ec9-a07b30639073'),
+            backgroundImage: AssetImage('images/vacumecleaner.png'),
           ),
         ),
         const SizedBox(
