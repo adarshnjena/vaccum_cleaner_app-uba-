@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:uba_app/navbar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uba_app/panel_widget.dart';
+import 'package:uba_app/rounded_icon_btn.dart';
 import 'mainpage.dart';
 
 void main() {
@@ -46,7 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(widget.title, style: GoogleFonts.nunito()),
-            const Icon(Icons.mode_night),
+            RoundIconButton(
+              icon: Icons.mode_night,
+              onPressed: () {
+                print("hello");
+              },
+              size: MediaQuery.of(context).size.width * 0.08,
+              widthANDheight: MediaQuery.of(context).size.width * 0.1,
+              fillcolor: const Color(0xFF01d9b2),
+              buttonColor: Colors.white,
+            ),
           ],
         ),
         backgroundColor: const Color(0xFF01d9b2),
@@ -56,76 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
           topRight: Radius.circular(10.0),
           topLeft: Radius.circular(10.0),
         ),
-        minHeight: 50,
+        minHeight: MediaQuery.of(context).size.height * 0.09,
         body: const MainPage(),
         panelBuilder: (controller) => PanelWidget(
           controller: controller,
         ),
       ),
-    );
-  }
-}
-
-class PanelWidget extends StatelessWidget {
-  final ScrollController controller;
-
-  const PanelWidget({
-    Key? key,
-    required this.controller,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.zero,
-      children: <Widget>[
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Divider(
-              color: Colors.black,
-              thickness: 3,
-              height: 15,
-              endIndent: 170,
-              indent: 170,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(
-                'Next Cleaning',
-                style: GoogleFonts.nunito(
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            Container(
-              height: 150,
-              padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
-              width: double.infinity,
-              child: const Card(
-                color: Colors.black,
-              ),
-            ),
-            Container(
-              height: 150,
-              padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
-              width: double.infinity,
-              child: const Card(
-                color: Colors.black,
-              ),
-            ),
-            Container(
-              height: 150,
-              padding: const EdgeInsets.fromLTRB(10, 5, 10, 2),
-              width: double.infinity,
-              child: const Card(
-                color: Colors.black,
-              ),
-            ),
-          ],
-        )
-      ],
     );
   }
 }

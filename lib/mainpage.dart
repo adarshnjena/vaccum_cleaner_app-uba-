@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uba_app/rounded_icon_btn.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -10,17 +11,17 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.09,
         ),
-        const Center(
+        Center(
           child: CircleAvatar(
-            radius: 150,
-            backgroundImage: AssetImage('images/vacumecleaner.png'),
+            radius: MediaQuery.of(context).size.height * 0.2,
+            backgroundImage: const AssetImage('images/vacumecleaner.png'),
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.025,
         ),
         Text(
           'Charging in Kitchen 50%',
@@ -30,27 +31,38 @@ class MainPage extends StatelessWidget {
             color: const Color.fromARGB(255, 128, 141, 139),
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.025,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Icon(
-              Icons.schedule_send_rounded,
-              size: 50,
-              color: Color.fromARGB(221, 134, 131, 131),
+          children: [
+            RoundIconButton(
+              icon: Icons.schedule_send_rounded,
+              onPressed: () {
+                print("hello");
+              },
+              size: MediaQuery.of(context).size.height * 0.07,
+              widthANDheight: MediaQuery.of(context).size.height * 0.07,
             ),
-            Icon(
-              Icons.play_circle,
-              color: Color(0xFF01d9b2),
-              size: 100,
+            RoundIconButton(
+              icon: Icons.play_arrow,
+              size: MediaQuery.of(context).size.height * 0.10,
+              widthANDheight: MediaQuery.of(context).size.height * 0.11,
+              fillcolor: const Color(0xFF01d9b2),
+              buttonColor: Colors.black,
+              onPressed: () {
+                print("hello");
+              },
             ),
-            Icon(
-              Icons.map_rounded,
-              size: 50,
-              color: Color.fromARGB(221, 134, 131, 131),
-            )
+            RoundIconButton(
+              icon: Icons.map_rounded,
+              onPressed: () {
+                print("hello");
+              },
+              size: MediaQuery.of(context).size.height * 0.07,
+              widthANDheight: MediaQuery.of(context).size.height * 0.07,
+            ),
           ],
         )
       ],
