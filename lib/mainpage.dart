@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uba_app/controller.dart';
 import 'package:uba_app/rounded_icon_btn.dart';
 
 class MainPage extends StatelessWidget {
@@ -46,15 +47,23 @@ class MainPage extends StatelessWidget {
               widthANDheight: MediaQuery.of(context).size.height * 0.07,
             ),
             RoundIconButton(
-              icon: Icons.play_arrow,
-              size: MediaQuery.of(context).size.height * 0.10,
-              widthANDheight: MediaQuery.of(context).size.height * 0.11,
-              fillcolor: const Color(0xFF01d9b2),
-              buttonColor: Colors.black,
-              onPressed: () {
-                print("hello");
-              },
-            ),
+                icon: Icons.play_arrow,
+                size: MediaQuery.of(context).size.height * 0.10,
+                widthANDheight: MediaQuery.of(context).size.height * 0.11,
+                fillcolor: const Color(0xFF01d9b2),
+                buttonColor: Colors.black,
+                onPressed: () {
+                  print("hello");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        var controllerPage = const Controller();
+                        return controllerPage;
+                      },
+                    ),
+                  );
+                }),
             RoundIconButton(
               icon: Icons.map_rounded,
               onPressed: () {
